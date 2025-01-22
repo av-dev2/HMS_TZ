@@ -592,7 +592,7 @@ class MedicationChangeRequest(Document):
                 frappe.throw("Medication Change Request was not created, try again")
 
 
-    def update_drug_prescription(patient_encounter_doc, dn_doc):
+    def update_drug_prescription(self, patient_encounter_doc, dn_doc):
         for d in patient_encounter_doc.drug_prescription:
             for item in dn_doc.items:
                 if d.name == item.reference_name:
